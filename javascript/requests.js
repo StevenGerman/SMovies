@@ -1,7 +1,7 @@
 
 
 // Definimos la clave de API que se utilizará para realizar las solicitudes a la API de The Movie DB
-const apiKey = '6913a37df22d89e5ac29bb9cd3c0014b';
+export const apiKey = '6913a37df22d89e5ac29bb9cd3c0014b';
 
 // Función asincrónica para obtener películas populares
 export async function fetchPopularMovies(language, page) {
@@ -22,7 +22,7 @@ export async function searchMovies(query, language, page) {
 }
 
 // Función asincrónica para realizar solicitudes a la API
-async function fetchFromAPI(url) {
+export async function fetchFromAPI(url) {
     try {
         // Realizamos la solicitud a la URL especificada
         const response = await fetch(url);

@@ -1,6 +1,6 @@
-import { fetchPopularMovies, searchMovies } from "./javascript/requests.js";
-import { showMovies } from "./javascript/html.js";
-import { validateInput } from "./javascript/validations.js";
+import { fetchPopularMovies, searchMovies } from "./javascript/requests";
+import { showMovies } from "./javascript/html";
+import { validateInput } from "./javascript/validations";
 
 
 //CONSTANTES
