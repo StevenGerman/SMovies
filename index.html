@@ -13,6 +13,7 @@
     <div class="container">
         <h1>Peliculas</h1>
         <form id="form">
+
             <label for="page">Página</label>
         <select name="page" id="page">
             <option value="1">1</option>    
@@ -27,14 +28,19 @@
             <option value="es-MX">Español</option>    
             <option value="en-US">Ingles</option>
         </select>
-
-        <button type="submit">Buscar Peliculas</button>
-        </form>
+        
+        <!-- Search -->
+        <label for="search">Search</label>
+        <input type="text" id="search" name="search" placeholder="Search">
+        <button type="submit" >Buscar Peliculas</button>
+        
         
 
         <div id="output"></div>
     </div>
 
-    <script src="app.js"></script>
+    <!--<p id="noResults" class="no-results">No se encontraron Peliculas</p>-->
+
+    <script type="module" src="app.js"></script>
 </body>
 </html>

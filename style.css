@@ -10,3 +10,7 @@ h3{
 p{
     text-align: center;
 }
+.no-results{
+    font-size: 20px;
+    display: none;
+}
