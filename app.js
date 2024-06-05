@@ -1,6 +1,6 @@
-import { fetchPopularMovies, searchMovies } from "./javascript/requests";
-import { showMovies } from "./javascript/html";
-import { validateInput } from "./javascript/validations";
+import { fetchPopularMovies, searchMovies,fetchFromAPI } from "./javascript/requests.js";
+import { showMovies } from "./javascript/html.js";
+import { validateInput } from "./javascript/validations.js";
 
 
 //CONSTANTES
@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const popularMovies = await fetchPopularMovies(languageValue, pageValue);
 
     // Verifica si se encontraron películas populares y muestra el resultado o un mensaje de error en función de ello.
-    if (popularMovies && popularMovies.results.length > 0) {
+    if (popularMovies) {
         showMovies(popularMovies.results, output);
     } else {
-        showError('No se encontraron películas populares.', output);
+        console.log('No se encontraron películas populares.', output);
     }
 });
 
@@ -38,14 +38,14 @@ searchInput.addEventListener('keyup', async (event) => {
     // Verifica si el valor de entrada no pasa la validación
     if (!validateInput(query)) {
         // Muestra un mensaje de error si el valor de entrada no es válido y devuelve
-        showError('Por favor, escribe solo letras, números o espacios.', output);
+        console.log('Por favor, escribe solo letras, números o espacios.', output);
         return;
     }
     
     // Verifica si el campo de búsqueda está vacío
     if (!query) {
         // Muestra un mensaje de error si el campo de búsqueda está vacío y devuelve
-        showError('Por favor, escribe un término de búsqueda.', output);
+        console.log('Por favor, escribe un término de búsqueda.', output);
         return;
     }
 
@@ -58,7 +58,7 @@ searchInput.addEventListener('keyup', async (event) => {
         showMovies(movies.results, output);
     } else {
         // Muestra un mensaje de error si no se encontraron películas y no hay resultados
-        showError('No se encontraron películas.', output);
+        console.log('No se encontraron películas.', output);
     }
 });
 
@@ -73,14 +73,14 @@ form.addEventListener('submit', async (event) => {
     // Verifica si el valor de entrada no pasa la validación
     if (!validateInput(query)) {
         // Muestra un mensaje de error si el valor de entrada no es válido y devuelve
-        showError('Por favor, escribe solo letras, números o espacios.', output);
+        console.log('Por favor, escribe solo letras, números o espacios.');
         return;
     }
     
     // Verifica si el campo de búsqueda está vacío
     if (!query) {
         // Muestra un mensaje de error si el campo de búsqueda está vacío y devuelve
-        showError('Por favor, escribe un término de búsqueda.', output);
+        console.log('Por favor, escribe un término de búsqueda.');
         return;
     }
 
@@ -93,7 +93,7 @@ form.addEventListener('submit', async (event) => {
         showMovies(movies.results, output);
     } else {
         // Muestra un mensaje de error si no se encontraron películas y no hay resultados
-        showError('No se encontraron películas.', output);
+        console.log('No se encontraron películas.', output);
     }
 });
 

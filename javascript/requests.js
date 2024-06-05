@@ -6,7 +6,7 @@ export const apiKey = '6913a37df22d89e5ac29bb9cd3c0014b';
 // Función asincrónica para obtener películas populares
 export async function fetchPopularMovies(language, page) {
     // Construimos la URL de la solicitud utilizando la clave de API, el idioma y el número de página especificados
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=${language}&page=${page}`;
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=${language}&page=1`;
     
     // Realizamos la solicitud a la API y retornamos el resultado
     return await fetchFromAPI(url);
